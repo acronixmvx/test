@@ -63,7 +63,7 @@ section, .navbar, footer {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 10px; /* Reducere spațiu între linkuri */
+    gap: 15px; /* Spațiu decent între linkuri */
 }
 
 .nav-links a {
@@ -71,7 +71,7 @@ section, .navbar, footer {
     text-decoration: none;
     font-size: 1.1rem;
     transition: text-shadow 0.3s;
-    white-space: nowrap; /* Previne ruperea cuvintelor */
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -144,9 +144,18 @@ section, .navbar, footer {
     box-shadow: 0 0 10px #0f0;
 }
 
+/* X Link Section */
+.x-link-container {
+    position: absolute;
+    top: 60vh; /* Poziționare peste Token Details, vizibil de la intrare */
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
 .x-link {
-    font-size: 0.9rem;
-    margin-top: 10px;
+    font-size: 0.7rem; /* Text mai mic */
+    margin: 20px 0; /* Spațiu decent */
 }
 
 .x-link a {
@@ -231,9 +240,34 @@ section, .navbar, footer {
     background: rgba(0, 0, 0, 0.7);
 }
 
+.faq {
+    margin-top: 20px;
+}
+
+.faq h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.faq li {
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
 /* Explore */
-.explore-links, .charting, .explorer, .wallet, .dex-embed {
+.explore-links, .charting, .explorer, .wallet {
     margin: 20px 0;
+    text-align: center;
+}
+
+.chart-embed {
+    margin: 40px 0; /* Separare mai mare pentru chart */
     text-align: center;
 }
 
@@ -253,9 +287,11 @@ section, .navbar, footer {
     margin-top: 10px;
 }
 
-.dex-embed iframe {
+.chart-embed iframe {
     border: 2px solid #0f0;
     border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
 }
 
 /* Submit Application */
@@ -292,6 +328,14 @@ section, .navbar, footer {
     border-radius: 5px;
     text-align: center;
     color: #0f0;
+}
+
+/* Build Version */
+.build-version {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #0f0;
+    margin: 20px 0;
 }
 
 /* Footer */
@@ -339,5 +383,9 @@ footer {
 
     .section h2 {
         font-size: 2rem;
+    }
+
+    .x-link {
+        font-size: 0.6rem;
     }
 }
