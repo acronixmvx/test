@@ -1,4 +1,4 @@
-// Matrix Rain Effect
+
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
 
@@ -33,7 +33,6 @@ function draw() {
 
 setInterval(draw, 33);
 
-// Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -42,7 +41,6 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
 });
 
-// Smooth Scroll for Navbar Links
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -56,37 +54,41 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
-// Copy Token ID
 function copyTokenID() {
-    navigator.clipboard.writeText('NIX-12345').then(() => {
+    navigator.clipboard.writeText('NIX-de14cc').then(() => {
         alert('Token ID copied to clipboard!');
     });
 }
 
-// Reveal Email
 function revealEmail() {
     const email = document.getElementById('email');
     email.style.display = 'inline';
 }
 
-// Placeholder for API Data (to be replaced with real API call)
-function fetchTokenData() {
-    const mockData = {
-        price: '$0.50',
-        mcap: '$10M',
-        supply: '100M $NIX',
-        transfers: '5000'
-    };
+async function fetchTokenData() {
+    try {
+        const response = await fetch('https://api.multiversx.com/tokens/NIX-de14cc');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
 
-    document.getElementById('price').textContent = mockData.price;
-    document.getElementById('mcap').textContent = mockData.mcap;
-    document.getElementById('supply').textContent = mockData.supply;
-    document.getElementById('transfers').textContent = mockData.transfers;
+        const supply = parseFloat(data.supply) / Math.pow(10, data.decimals);
+        const circulatingSupply = parseFloat(data.circulatingSupply) / Math.pow(10, data.decimals);
+
+        document.getElementById('price').textContent = 'N/A'; // API does not provide price
+        document.getElementById('mcap').textContent = 'N/A'; // API does not provide market cap
+        document.getElementById('supply').textContent = `${supply.toLocaleString()} $NIX`;
+        document.getElementById('transfers').textContent = data.transfers.toLocaleString();
+    } catch (error) {
+        console.error('Error fetching token data:', error);
+        document.getElementById('price').textContent = 'Loading...';
+        document.getElementById('mcap').textContent = 'Loading...';
+        document.getElementById('supply').textContent = 'Loading...';
+        document.getElementById('transfers').textContent = 'Loading...';
+    }
 }
 
 fetchTokenData();
 
-// Resize Canvas on Window Resize
 window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
