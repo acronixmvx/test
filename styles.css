@@ -16,7 +16,6 @@ body {
     position: relative;
 }
 
-/* Load Animation */
 section, .navbar, footer {
     opacity: 0;
     transform: translateY(20px);
@@ -40,7 +39,6 @@ section, .navbar, footer {
     opacity: 0.2;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -63,7 +61,7 @@ section, .navbar, footer {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px; /* Spațiu decent între linkuri */
+    gap: 20px;
 }
 
 .nav-links a {
@@ -71,7 +69,6 @@ section, .navbar, footer {
     text-decoration: none;
     font-size: 1.1rem;
     transition: text-shadow 0.3s;
-    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -92,7 +89,6 @@ section, .navbar, footer {
     transition: all 0.3s;
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -144,31 +140,6 @@ section, .navbar, footer {
     box-shadow: 0 0 10px #0f0;
 }
 
-/* X Link Section */
-.x-link-container {
-    position: absolute;
-    top: 60vh; /* Poziționare peste Token Details, vizibil de la intrare */
-    width: 100%;
-    text-align: center;
-    z-index: 1;
-}
-
-.x-link {
-    font-size: 0.7rem; /* Text mai mic */
-    margin: 20px 0; /* Spațiu decent */
-}
-
-.x-link a {
-    color: #0f0;
-    text-decoration: underline;
-    transition: text-shadow 0.3s;
-}
-
-.x-link a:hover {
-    text-shadow: 0 0 10px #0f0;
-}
-
-/* Sections */
 .section {
     padding: 80px 20px;
     max-width: 1200px;
@@ -185,7 +156,6 @@ section, .navbar, footer {
     text-shadow: 0 0 10px #0f0;
 }
 
-/* Token Details */
 .token-id {
     display: flex;
     justify-content: center;
@@ -235,39 +205,12 @@ section, .navbar, footer {
     color: red;
 }
 
-/* About */
 .about {
     background: rgba(0, 0, 0, 0.7);
 }
 
-.faq {
-    margin-top: 20px;
-}
-
-.faq h3 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.faq ul {
-    list-style: none;
-    padding: 0 20px;
-}
-
-.faq li {
-    margin: 10px 0;
-    font-size: 0.9rem;
-}
-
-/* Explore */
-.explore-links, .charting, .explorer, .wallet {
+.explore-links, .wallet, .charting, .explorer {
     margin: 20px 0;
-    text-align: center;
-}
-
-.chart-embed {
-    margin: 40px 0; /* Separare mai mare pentru chart */
     text-align: center;
 }
 
@@ -287,14 +230,6 @@ section, .navbar, footer {
     margin-top: 10px;
 }
 
-.chart-embed iframe {
-    border: 2px solid #0f0;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 800px;
-}
-
-/* Submit Application */
 .email-reveal {
     text-align: center;
     margin-top: 20px;
@@ -314,7 +249,6 @@ section, .navbar, footer {
     box-shadow: 0 0 10px #0f0;
 }
 
-/* Featured Posts */
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -330,15 +264,6 @@ section, .navbar, footer {
     color: #0f0;
 }
 
-/* Build Version */
-.build-version {
-    text-align: center;
-    font-size: 0.7rem;
-    color: #0f0;
-    margin: 20px 0;
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -346,13 +271,11 @@ footer {
     color: #0f0;
 }
 
-/* Animations */
 @keyframes flicker {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.8; }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -383,9 +306,5 @@ footer {
 
     .section h2 {
         font-size: 2rem;
-    }
-
-    .x-link {
-        font-size: 0.6rem;
     }
 }
